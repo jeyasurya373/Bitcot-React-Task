@@ -4,10 +4,11 @@ import Series from "./components/content/series/Series";
 import { BrowserRouter,Routes,Route} from 'react-router-dom';
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
+import "./style.css"
 
 function App() {
   return (
-    <div style={{display:'flex',flexDirection:'column',minHeight:'100vh',overflow:'hidden'}}>
+    <div className="appContainer">
     <BrowserRouter>
     <Header/>
      <Routes>

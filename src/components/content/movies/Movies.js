@@ -35,11 +35,7 @@ function Movie() {
       {loading && (<div className='loading'>Loading ....</div>)}
       {movies.map(movie => (
         <div key={movie.title} className='movieItemWrapper'>
-          <img  src={placeholder} className='movieImg' alt={movie.title} />
-          {/* SOME API IMAGES ARE NOT LOADING STATE IT MAKE WEBSITE ODD 
-           SO I USED PLACEHOLDER. IF U WANT SEE THE 
-           IMAGE USE THIS INSIDE THIS IN Img src =>  src={movie.images['Poster Art'].url}
-           */} 
+          <img  src={movie.images['Poster Art'].url} className='movieImg' alt={movie.title} onError={(e)=> e.target.src = placeholder}/>
           <h3 className='movieTitle' title={movie.title}>{movie.title}</h3>
         </div>
       ))}

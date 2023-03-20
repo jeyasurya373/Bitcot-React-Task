@@ -32,11 +32,7 @@ function Series() {
         {loading && (<div className='loading'>Loading ....</div>)}
       {series.map(serie => (
         <div key={serie.title} className='seriesItemWrapper'>
-          <img src={placeholder} className='seriesImg' alt={serie.title} />
-          {/* SOME API IMAGES ARE NOT LOADING STATE IT MAKE WEBSITE ODD 
-           SO I USED PLACEHOLDER. IF U WANT SEE THE 
-           IMAGE USE THIS INSIDE THIS IN Img src =>  src={serie.images['Poster Art'].url}
-           */} 
+          <img src={serie.images['Poster Art'].url} className='seriesImg' alt={serie.title} onError={(e)=> e.target.src = placeholder}/>
           <h3 className='seriesTitle' title={serie.title}>{serie.title}</h3>
         </div>
       ))}
